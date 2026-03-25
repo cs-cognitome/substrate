@@ -2,6 +2,8 @@
 title: "Bypassing WAFs using LLM Prompt Injection"
 date: "2026-03-15"
 excerpt: "An exploration into novel techniques for evading Web Application Firewalls by tricking embedded AI models."
+tags: ["GenAI & LLMs", "AI Ethics", "AI Red Team"]
+depth: "emerging"
 ---
 
 # Bypassing WAFs using LLM Prompt Injection
