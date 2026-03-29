@@ -20,8 +20,11 @@ export default async function CertsPage() {
         <h1 className="text-3xl font-mono text-primary flex items-center gap-3">
           <Award /> <DecipheringText text="certifications" speed={40} />
         </h1>
-        <p className="mt-4 text-gray-400 font-mono">
-          Validated knowledge and practical skills across offensive security, cloud infrastructure, and enterprise defense.
+        <p className="mt-4 text-primary/50 font-mono text-sm leading-relaxed">
+          Beyond the badges: a diligent and constant expansion of my tech-toolkit. These certifications represent a deeper dive into defensive and offensive security, hardened cloud infrastructure, and the intersection of Applied AI and LLM Security.
+        </p>
+        <p className="mt-3 text-gray-500 font-mono text-sm leading-relaxed">
+          This synthesis of practical skill and architectural knowledge serves as my foundation for building, securing, and scaling resilient systems in complex environments.
         </p>
       </div>
 
