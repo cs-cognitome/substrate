@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full border-b border-border bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <nav className="w-full bg-black/80 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-sm">
         <Link href="/" className="flex items-center gap-2 text-primary hover:text-primary-dim transition-colors group">
           <Terminal size={18} className="group-hover:animate-pulse" />
@@ -33,6 +33,8 @@ export default function Navbar() {
           ))}
         </div>
       </div>
+      {/* Animated energy line */}
+      <div className="nav-energy-line" />
     </nav>
   );
 }
