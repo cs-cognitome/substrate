@@ -77,7 +77,7 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
         {filteredCerts.map((cert) => (
           <div key={cert.id} className="animate-in slide-in-from-bottom-4 duration-500 group bg-surface border border-border/50 rounded-xl hover:border-primary/50 transition-colors flex flex-row h-full">
             {/* Left: text content */}
-            <div className="flex-grow p-6 flex flex-col">
+            <div className="flex-grow px-6 pt-5 pb-6 flex flex-col">
               <div className="text-xs text-gray-500 font-mono mb-1">{cert.date}</div>
               <h2 className="text-lg font-bold text-white mb-2 leading-tight">{cert.name}</h2>
               <div className="text-primary font-mono text-sm mb-3">{cert.issuer}</div>
@@ -85,7 +85,7 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
                 <p className="text-gray-400 text-xs leading-relaxed">{cert.description}</p>
               )}
               {cert.tags && cert.tags.length > 0 && (
-                <div className="mt-auto pt-4 flex flex-wrap gap-1.5">
+                <div className="mt-auto pt-6 flex flex-wrap gap-1.5">
                   {cert.tags.map(tag => (
                     <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/5 border border-border/30 text-gray-500">
                       {tag}
@@ -96,7 +96,7 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
             </div>
             {/* Right: badge column */}
             {cert.badge && (
-              <div className="border-l border-border/20 p-4 flex items-center justify-center shrink-0">
+              <div className="border-l border-border/25 p-4 flex items-center justify-center shrink-0 mt-5 mb-6">
                 <Image
                   src={cert.badge}
                   alt={cert.name}
