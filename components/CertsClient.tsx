@@ -75,33 +75,35 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
       {/* Cert Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCerts.map((cert) => (
-          <div key={cert.id} className="animate-in slide-in-from-bottom-4 duration-500 group relative p-6 bg-surface border border-border/50 rounded-xl hover:border-primary/50 transition-colors flex flex-col h-full">
+          <div key={cert.id} className="animate-in slide-in-from-bottom-4 duration-500 group bg-surface border border-border/50 rounded-xl hover:border-primary/50 transition-colors flex flex-row h-full">
+            {/* Left: text content */}
+            <div className="flex-grow p-6 flex flex-col">
+              <div className="text-xs text-gray-500 font-mono mb-1">{cert.date}</div>
+              <h2 className="text-lg font-bold text-white mb-2 leading-tight">{cert.name}</h2>
+              <div className="text-primary font-mono text-sm mb-3">{cert.issuer}</div>
+              {cert.description && (
+                <p className="text-gray-400 text-xs leading-relaxed">{cert.description}</p>
+              )}
+              {cert.tags && cert.tags.length > 0 && (
+                <div className="mt-auto pt-4 flex flex-wrap gap-1.5">
+                  {cert.tags.map(tag => (
+                    <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/5 border border-border/30 text-gray-500">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Right: badge column */}
             {cert.badge && (
-              <div className="absolute top-4 right-4 w-14 h-14">
+              <div className="border-l border-border/20 p-4 flex items-center justify-center shrink-0">
                 <Image
                   src={cert.badge}
                   alt={cert.name}
-                  width={56}
-                  height={56}
+                  width={80}
+                  height={80}
                   className="object-contain"
                 />
-              </div>
-            )}
-            <div className="flex-grow">
-              <div className="text-xs text-gray-500 font-mono mb-2">{cert.date}</div>
-              <h2 className="text-lg font-bold text-white mb-2 leading-tight pr-16">{cert.name}</h2>
-              <div className="text-primary font-mono text-sm mb-4">{cert.issuer}</div>
-              {cert.description && (
-                <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
-              )}
-            </div>
-            {cert.tags && cert.tags.length > 0 && (
-              <div className="mt-4 pt-3 border-t border-border/30 flex flex-wrap gap-1.5">
-                {cert.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/5 border border-border/30 text-gray-500">
-                    {tag}
-                  </span>
-                ))}
               </div>
             )}
           </div>
