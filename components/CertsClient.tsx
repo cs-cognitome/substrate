@@ -4,13 +4,15 @@ import React, { useState, useMemo } from 'react';
 import CertFilters, { CERT_TAXONOMY } from './CertFilters';
 import { Award, ExternalLink } from 'lucide-react';
 import DecipheringText from './DecipheringText';
+import Image from 'next/image';
 
 interface Cert {
   id: string;
   name: string;
   issuer: string;
   date: string;
-  description: string;
+  description?: string;
+  badge?: string;
   tags?: string[];
 }
 
@@ -74,16 +76,24 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCerts.map((cert) => (
           <div key={cert.id} className="animate-in slide-in-from-bottom-4 duration-500 group relative p-6 bg-surface border border-border/50 rounded-xl hover:border-primary/50 transition-colors flex flex-col h-full">
-            <div className="absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-              <ExternalLink size={20} />
-            </div>
+            {cert.badge && (
+              <div className="absolute top-4 right-4 w-14 h-14">
+                <Image
+                  src={cert.badge}
+                  alt={cert.name}
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
+              </div>
+            )}
             <div className="flex-grow">
               <div className="text-xs text-gray-500 font-mono mb-2">{cert.date}</div>
-              <h2 className="text-lg font-bold text-white mb-2 leading-tight">{cert.name}</h2>
+              <h2 className="text-lg font-bold text-white mb-2 leading-tight pr-16">{cert.name}</h2>
               <div className="text-primary font-mono text-sm mb-4">{cert.issuer}</div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {cert.description}
-              </p>
+              {cert.description && (
+                <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
+              )}
             </div>
             {cert.tags && cert.tags.length > 0 && (
               <div className="mt-4 pt-3 border-t border-border/30 flex flex-wrap gap-1.5">

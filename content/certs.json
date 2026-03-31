@@ -1,26 +1,11 @@
 [
   {
-    "id": "oscp",
-    "name": "OffSec Certified Professional (OSCP)",
-    "issuer": "OffSec",
-    "date": "2023-05-15",
-    "description": "24-hour hands-on penetration testing exam covering exploitation, active directory, and privilege escalation.",
-    "tags": ["Offensive"]
-  },
-  {
-    "id": "cissp",
-    "name": "Certified Information Systems Security Professional",
-    "issuer": "ISC2",
-    "date": "2022-11-10",
-    "description": "Advanced technical and managerial skills for designing, engineering, and managing information security programs.",
-    "tags": ["Blue Team", "Threat Intelligence"]
-  },
-  {
-    "id": "aws-security",
-    "name": "AWS Certified Security - Specialty",
-    "issuer": "Amazon Web Services",
-    "date": "2024-02-28",
-    "description": "Validation of AWS knowledge across security topics such as data protection, IAM, and incident response.",
-    "tags": ["AWS", "Blue Team"]
+    "id": "az-900",
+    "name": "Microsoft Certified: Azure Fundamentals",
+    "issuer": "Microsoft",
+    "date": "2024-10-27",
+    "description": "Validation of foundational knowledge of cloud services and how those services are provided with Microsoft Azure.",
+    "badge": "/badges/microsoft-certified-fundamentals-badge.svg",
+    "tags": ["Azure", "Microsoft"]
   }
 ]

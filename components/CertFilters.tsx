@@ -10,6 +10,7 @@ export const CERT_TAXONOMY = [
   "AI",
   "Threat Intelligence",
   "AI Security",
+  "Microsoft",
 ] as const;
 
 interface CertFiltersProps {
