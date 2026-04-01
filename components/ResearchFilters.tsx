@@ -46,10 +46,10 @@ export default function ResearchFilters({
               key={depth}
               onClick={() => setDepth(depth)}
               className={clsx(
-                "px-4 py-2 font-mono text-sm border transition-all duration-300 rounded-md uppercase",
+                "px-2.5 py-1 text-xs font-mono border rounded-md transition-all duration-300 uppercase",
                 activeDepth === depth 
-                  ? "border-primary text-primary bg-primary/10 shadow-[0_0_10px_rgba(0,255,128,0.2)]" 
-                  : "border-border text-gray-500 hover:border-gray-500 hover:text-gray-300 bg-surface/50"
+                  ? "border-primary bg-primary/10 text-primary shadow-[0_0_10px_rgba(0,255,128,0.15)]" 
+                  : "border-border/50 bg-black text-gray-500 hover:border-primary/50 hover:text-gray-300"
               )}
             >
               {depth}
