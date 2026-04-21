@@ -25,14 +25,17 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--color-background); 
+  background: var(--color-background);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border); 
+  background: var(--color-border);
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary); 
+  background: var(--color-primary);
 }
 
 /* Animated energy line beneath navbar */
@@ -53,14 +56,12 @@ body {
   left: 0;
   height: 3px;
   width: 80px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 255, 102, 0.4),
-    rgba(0, 255, 102, 0.9),
-    rgba(0, 255, 102, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 255, 102, 0.4),
+      rgba(0, 255, 102, 0.9),
+      rgba(0, 255, 102, 0.4),
+      transparent);
   border-radius: 50%;
   filter: blur(1px);
   animation: photon-sweep 3s ease-in-out infinite;
@@ -73,11 +74,9 @@ body {
   left: 0;
   height: 5px;
   width: 30px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 255, 102, 0.8),
-    transparent
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(0, 255, 102, 0.8),
+      transparent);
   filter: blur(3px);
   animation: photon-sweep 3s ease-in-out infinite;
 }
@@ -87,14 +86,35 @@ body {
     left: -80px;
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     left: 100%;
     opacity: 0;
   }
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+  }
+
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 2px rgba(0, 255, 102, 0.1);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
 }

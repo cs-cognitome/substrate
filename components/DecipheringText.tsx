@@ -7,10 +7,13 @@ export default function DecipheringText({ text, speed = 30 }: { text: string; sp
   const [displayText, setDisplayText] = useState("");
   
   useEffect(() => {
+    let isMounted = true;
     let iteration = 0;
     let interval: NodeJS.Timeout;
 
     const tick = () => {
+      if (!isMounted) return;
+      
       setDisplayText(
         text.split("")
           .map((letter, index) => {
@@ -27,8 +30,11 @@ export default function DecipheringText({ text, speed = 30 }: { text: string; sp
     };
 
     interval = setInterval(tick, speed);
-    return () => clearInterval(interval);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
   }, [text, speed]);
 
-  return <span className="font-mono whitespace-pre-wrap">{displayText}</span>;
+  return <span className="font-mono whitespace-nowrap">{displayText}</span>;
 }

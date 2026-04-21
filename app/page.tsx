@@ -1,35 +1,89 @@
 import DecipheringText from "@/components/DecipheringText";
-import Scene from "@/components/Scene";
-import { ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import clsx from "clsx";
 
 export default function Home() {
+  const showcaseTags = [
+    { name: "Azure", count: 1, active: false },
+    { name: "Blue Team", count: 1, active: true },
+    { name: "AWS", count: 0, active: false },
+    { name: "CompTIA", count: 1, active: false },
+    { name: "arcX", count: 1, active: false },
+    { name: "HackTheBox", count: 8, active: false },
+    { name: "DataCamp", count: 1, active: false },
+    { name: "LetsDefend", count: 1, active: false },
+    { name: "TryHackMe", count: 1, active: false },
+  ];
+
   return (
-    <div className="relative min-h-[80vh] flex flex-col items-center justify-center">
-      <Scene />
+    <div className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
+      {/* Background Image (Black Hole Original) */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/blackhole.png')" }}
+      />
       
-      <div className="text-center space-y-6 z-10 backdrop-blur-[2px] p-8 rounded-xl border border-border/40 bg-black/20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-mono mb-4">
-          <ShieldCheck size={14} />
-          <span>STATUS: AVAILABLE FOR OPERATIONS</span>
-        </div>
-        
-        <h1 className="text-4xl md:text-6xl font-bold font-mono tracking-tighter">
-          <DecipheringText text="AI SECURITY &" speed={40} /><br />
-          <span className="text-primary"><DecipheringText text="PENTESTING" speed={40} /></span>
+      {/* Background Image Overlay (Very light just for text readability) */}
+      <div className="absolute inset-0 z-0 bg-black/20" />
+      
+      <div className="w-full max-w-[1300px] mx-auto px-6 z-10 flex flex-col mt-4 lg:mt-12">
+        {/* Header - Spans full width, no grid constraints to prevent wrapping */}
+        <h1 className="text-6xl md:text-[6rem] lg:text-[7.5rem] font-bold font-mono tracking-tighter leading-[1] whitespace-nowrap mb-12 lg:mb-16">
+          <div className="text-white">
+            &gt;_<DecipheringText text="AI SECURITY &" speed={40} />
+          </div>
+          <div className="text-white">
+            <DecipheringText text="ENGINEERING" speed={40} />
+          </div>
         </h1>
         
-        <p className="max-w-xl mx-auto text-gray-400 font-mono text-sm leading-relaxed">
-          Exploring the intersections of offensive security, artificial intelligence, and applied cryptography. Uncovering vulnerabilities before they are exploited.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <Link href="/whoami" className="px-6 py-2 bg-primary text-black font-mono font-semibold rounded hover:bg-primary/80 transition-colors flex items-center justify-center gap-2">
-            INITIALIZE_PROFILE <ArrowRight size={16} />
-          </Link>
-          <Link href="/research" className="px-6 py-2 border border-border text-gray-300 font-mono rounded hover:bg-surface hover:text-white transition-colors flex items-center justify-center">
-            VIEW_LOGS
-          </Link>
+        {/* Two columns below the header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-start">
+          {/* Left: Buttons */}
+          <div className="lg:col-span-7 flex flex-wrap gap-4 pt-2">
+            <Link href="/whoami" className="px-6 py-3 bg-primary text-black font-mono font-bold text-sm rounded hover:bg-primary/80 transition-colors inline-flex items-center justify-center">
+              INITIALIZE_PROFILE
+            </Link>
+            <Link href="/research" className="px-6 py-3 border border-border text-gray-400 font-mono text-sm rounded hover:text-white hover:border-gray-500 transition-colors inline-flex items-center justify-center">
+              VIEW_LOGS
+            </Link>
+          </div>
+
+          {/* Right: Status and Certs */}
+          <div className="lg:col-span-5 space-y-8 lg:mt-[-3rem]">
+            <div className="space-y-4">
+              <div className="text-primary font-mono text-xl md:text-2xl animate-breathe uppercase tracking-wide">
+                <span className="mr-2">&gt;_</span>STATUS: AVAILABLE<br/>FOR OPERATIONS
+              </div>
+              
+              <p className="text-gray-400 font-mono text-sm leading-relaxed max-w-sm">
+                Ready to secure your infrastructure and redefine your defence-in-depth strategy.
+              </p>
+            </div>
+            
+            {/* Certs Showcase */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {showcaseTags.map((tag) => (
+                <div
+                  key={tag.name}
+                  className={clsx(
+                    "px-2.5 py-1 text-xs font-mono border rounded-md transition-all duration-300 flex items-center gap-1.5",
+                    tag.active
+                      ? "border-primary bg-primary/5 text-primary"
+                      : "border-border/50 bg-black text-gray-500"
+                  )}
+                >
+                  <span>{tag.name}</span>
+                  <span className={clsx(
+                    "text-[10px] px-1.5 py-0.5 rounded flex items-center justify-center",
+                    tag.active ? "bg-primary/20 text-primary" : "bg-surface border border-border/50 text-gray-500"
+                  )}>
+                    {tag.count}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

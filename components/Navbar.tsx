@@ -5,7 +5,7 @@ import { Terminal } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
-  
+
   const navLinks = [
     { name: '~/whoami', path: '/whoami' },
     { name: '~/research', path: '/research' },
@@ -23,10 +23,10 @@ export default function Navbar() {
         </Link>
         <div className="flex gap-4 sm:gap-6">
           {navLinks.map((link) => (
-            <Link 
-              key={link.path} 
+            <Link
+              key={link.path}
               href={link.path}
-              className={`hover:text-primary transition-colors ${pathname?.startsWith(link.path) ? 'text-primary' : 'text-gray-400'}`}
+              className={`hover:text-primary transition-colors text-gray-400`}
             >
               {link.name}
             </Link>
