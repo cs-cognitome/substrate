@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "AI Security Research & Pentesting",
-  description: "Cybersecurity portfolio specialized in AI Security and offensive research.",
+  title: "AI Security Research & Engineering",
+  description: "Cybersecurity portfolio specialized in AI Security research.",
 };
 
 export default function RootLayout({

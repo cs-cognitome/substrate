@@ -6,7 +6,7 @@ export default function Home() {
   const showcaseTags = [
     { name: "Azure", count: 1, active: false },
     { name: "Blue Team", count: 1, active: true },
-    { name: "AWS", count: 0, active: false },
+    { name: "AWS", count: 1, active: false },
     { name: "CompTIA", count: 1, active: false },
     { name: "arcX", count: 1, active: false },
     { name: "HackTheBox", count: 8, active: false },
@@ -16,17 +16,17 @@ export default function Home() {
   return (
     <div className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
       {/* Background Image (Black Hole Original) */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-cover bg-no-repeat"
-        style={{ 
+        style={{
           backgroundImage: "url('/blackhole.png')",
           backgroundPosition: "calc(50% + 16px) calc(50% - 4px)"
         }}
       />
-      
+
       {/* Background Image Overlay (Very light just for text readability) */}
       <div className="absolute inset-0 z-0 bg-black/10" />
-      
+
       <div className="w-full max-w-[1300px] mx-auto px-6 z-10 flex flex-col mt-4 lg:mt-12">
         {/* Header - Spans full width, no grid constraints to prevent wrapping */}
         <h1 className="text-6xl md:text-[6rem] lg:text-[7.5rem] font-bold font-mono tracking-tighter leading-[1] whitespace-nowrap mb-12 lg:mb-16">
@@ -37,7 +37,7 @@ export default function Home() {
             <DecipheringText text="ENGINEERING" speed={40} />
           </div>
         </h1>
-        
+
         {/* Two columns below the header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-start">
           {/* Left: Buttons */}
@@ -53,13 +53,13 @@ export default function Home() {
           {/* Right: Status and Certs */}
           <div className="lg:col-span-5 space-y-6 lg:mt-[-14px] pl-16">
             <div className="text-primary font-mono text-[32px] animate-breathe uppercase tracking-wide leading-tight">
-              <span className="mr-2">&gt;_</span>STATUS: AVAILABLE<br/>FOR OPERATIONS
+              <span className="mr-2">&gt;_</span>STATUS: AVAILABLE<br />FOR OPERATIONS
             </div>
-            
+
             <p className="text-gray-400 font-mono text-sm leading-relaxed max-w-sm">
               Ready to secure your infrastructure and redefine your defence-in-depth strategy.
             </p>
-            
+
             {/* Certs Showcase */}
             <div className="flex flex-wrap gap-1.5">
               {showcaseTags.map((tag) => (
