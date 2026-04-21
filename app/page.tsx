@@ -52,7 +52,7 @@ export default function Home() {
 
           {/* Right: Status and Certs */}
           <div className="lg:col-span-5 space-y-6 lg:mt-[-14px] pl-16">
-            <div className="text-primary font-mono text-[36px] animate-breathe uppercase tracking-wide leading-tight">
+            <div className="text-primary font-mono text-[32px] animate-breathe uppercase tracking-wide leading-tight">
               <span className="mr-2">&gt;_</span>STATUS: AVAILABLE<br/>FOR OPERATIONS
             </div>
             
