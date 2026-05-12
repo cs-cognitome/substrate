@@ -119,7 +119,7 @@ export default function CertsClient({ certs }: { certs: Cert[] }) {
 
                   {/* Description */}
                   {cert.description && (
-                    <p className="text-gray-400 text-sm leading-relaxed font-mono flex-grow">
+                    <p className="text-gray-500 text-sm leading-relaxed font-mono font-light tracking-wide flex-grow">
                       {cert.description}
                     </p>
                   )}
