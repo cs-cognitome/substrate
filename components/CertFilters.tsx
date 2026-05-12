@@ -20,7 +20,7 @@ export default function CertFilters({
   return (
     <div className="space-y-3 animate-in fade-in duration-700">
       <div className="flex items-center justify-between">
-        <h3 className="font-mono text-sm text-gray-400">FILTER BY TAG</h3>
+        <h3 className="font-mono text-sm text-gray-400">CHOOSE TAG</h3>
         {activeTags.length > 0 && (
           <button
             onClick={onClear}
