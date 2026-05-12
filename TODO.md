@@ -34,3 +34,6 @@
 
 <!-- TODO 8: CONTACT / SOCIALS — No way to reach you on the site currently. -->
 <!--         Add links (GitHub, LinkedIn, Twitter/X, email) in footer or a dedicated section. -->
+
+<!-- TODO 9: BACKGROUND IMAGE GRID — The grid cells in blackhole.png are rectangles, not squares. -->
+<!--         Replace with a version that has uniform square grid cells. -->

@@ -24,8 +24,10 @@ export default function Home() {
         }}
       />
 
-      {/* Background Image Overlay (Very light just for text readability) */}
-      <div className="absolute inset-0 z-0 bg-black/10" />
+      {/* Edge blending — fade image into #050505 background on all sides */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" style={{ opacity: 0.65 }} />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" style={{ opacity: 0.45 }} />
+      <div className="absolute inset-0 z-0" style={{ background: "radial-gradient(ellipse at calc(50% + 16px) calc(50% - 4px), transparent 35%, #050505 95%)" }} />
 
       <div className="w-full max-w-[1300px] mx-auto px-6 z-10 flex flex-col mt-4 lg:mt-12">
         {/* Header - Spans full width, no grid constraints to prevent wrapping */}
