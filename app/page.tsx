@@ -35,7 +35,7 @@ export default function Home() {
           <div className="text-white">
             &gt;_<DecipheringText text="AI SECURITY &" speed={40} />
           </div>
-          <div className="text-white">
+          <div className="text-white mt-2">
             <DecipheringText text="ENGINEERING" speed={40} />
           </div>
         </h1>
