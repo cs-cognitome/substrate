@@ -26,7 +26,11 @@ export default function Navbar() {
             <Link
               key={link.path}
               href={link.path}
-              className={`hover:text-primary transition-colors text-gray-400`}
+              className={`transition-colors font-mono text-sm px-2 py-0.5 rounded ${
+                pathname?.startsWith(link.path)
+                  ? 'text-primary bg-primary/10 border border-primary/30'
+                  : 'text-gray-400 hover:text-primary'
+              }`}
             >
               {link.name}
             </Link>

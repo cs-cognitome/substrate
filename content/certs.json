@@ -1,5 +1,32 @@
 [
   {
+    "id": "cbt-lvl1",
+    "name": "Certified Blue Team Level 1",
+    "issuer": "Security Blue Team",
+    "date": "2025-06-08",
+    "description": "Comprehensive training in defensive security operations, threat detection, incident response, and log analysis in enterprise environments.",
+    "badge": "/badges/BlueTeam-lvl-1.png",
+    "tags": ["Blue Team", "Defensive"]
+  },
+  {
+    "id": "aws-clf-c02",
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "date": "2025-02-15",
+    "description": "Foundational understanding of AWS Cloud concepts, core services, security, architecture, pricing, and support.",
+    "badge": "/badges/AWS-practitioner.png",
+    "tags": ["AWS", "Cloud"]
+  },
+  {
+    "id": "comptia-sec-plus",
+    "name": "CompTIA Security+",
+    "issuer": "CompTIA",
+    "date": "2024-06-17",
+    "description": "Vendor-neutral certification validating core security skills across threats, vulnerabilities, cryptography, identity management, and risk mitigation.",
+    "badge": "/badges/ComptiaSecurity+.png",
+    "tags": ["General", "Defensive"]
+  },
+  {
     "id": "az-900",
     "name": "Microsoft Certified: Azure Fundamentals",
     "issuer": "Microsoft",
