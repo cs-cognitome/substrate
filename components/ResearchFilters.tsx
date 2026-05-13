@@ -4,18 +4,9 @@ import clsx from 'clsx';
 export const TAXONOMY = [
   "GenAI & LLMs",
   "AI Ethics",
-  "Vulnerability Management",
-  "AI Red Team",
-  "Azure",
   "Drones",
-  "Swarm Intelligence",
-  "Robotics",
-  "Synthetic Biology",
-  "Brain-Computer Interfaces",
-  "Neuroscience",
-  "Cognitive Science",
   "Privacy & Anonymity",
-  "Privacy Enhancing Tech"
+  "Studying Notes",
 ] as const;
 
 interface ResearchFiltersProps {
@@ -40,11 +31,11 @@ export default function ResearchFilters({
             onClick={onClear}
             className="text-xs font-mono text-gray-500 hover:text-primary transition-colors"
           >
-            [exit]
+            [CLEAR]
           </button>
         )}
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-1.5">
         {TAXONOMY.map((tag) => {
           const count = tagCounts[tag] || 0;
           const isActive = activeTags.includes(tag);
@@ -53,7 +44,7 @@ export default function ResearchFilters({
               key={tag}
               onClick={() => onToggleTag(tag)}
               className={clsx(
-                "px-2.5 py-1 text-xs font-mono border rounded-md transition-all duration-300 flex items-center gap-1.5",
+                "px-2.5 py-1 text-xs font-mono border rounded-md transition-all duration-300 flex items-center justify-between w-full",
                 isActive
                   ? "border-primary bg-primary/10 text-primary shadow-[0_0_10px_rgba(0,255,128,0.15)]"
                   : "border-border/50 bg-black text-gray-500 hover:border-primary/50 hover:text-gray-300"
