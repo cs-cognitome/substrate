@@ -54,7 +54,7 @@ export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
 
   return (
     <div className="space-y-12 animate-in fade-in duration-700">
-      <div className="border-b border-border pb-6">
+      <div className="pb-2">
         <h1 className="text-3xl font-mono text-primary flex items-center gap-3">
           <BookOpen /> <DecipheringText text="research_logs" speed={40} />
         </h1>
