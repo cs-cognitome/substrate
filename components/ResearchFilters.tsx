@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 export const TAXONOMY = [
+  "Random Thoughts Out Loud",
   "GenAI & LLMs",
   "AI Ethics",
   "Drones",
