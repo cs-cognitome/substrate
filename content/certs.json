@@ -33,7 +33,7 @@
     "date": "2024-10-27",
     "description": "Validation of foundational knowledge of cloud services and how those services are provided with Microsoft Azure.",
     "badge": "/badges/microsoft-certified-fundamentals-badge.svg",
-    "tags": ["Azure", "Microsoft"]
+    "tags": ["Azure", "Microsoft", "Cloud"]
   }
 ]
 

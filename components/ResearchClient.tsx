@@ -89,7 +89,7 @@ export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-3">
             {filteredPosts.map((post) => (
               <div key={post.slug} className="animate-in slide-in-from-bottom-4 duration-500">
                 <ResearchCard post={post} />
