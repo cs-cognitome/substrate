@@ -58,14 +58,21 @@ export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
         <h1 className="text-3xl font-mono text-primary flex items-center gap-3">
           <BookOpen /> <DecipheringText text="research_logs" speed={40} />
         </h1>
-        <p className="mt-4 text-gray-400 font-mono flex items-center gap-2 max-w-2xl">
-          <span className="text-primary">&gt;</span> Public disclosures, vulnerability research, and technical write-ups.
-        </p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12 items-start">
         {/* Sidebar Filters */}
-        <div className="w-full lg:w-1/4 shrink-0 lg:sticky lg:top-24">
+        <div className="w-full lg:w-1/4 shrink-0 lg:sticky lg:top-24 space-y-8">
+          {/* Description */}
+          <div className="space-y-3">
+            <p className="text-primary/50 font-mono text-sm leading-relaxed">
+              Mapping the inevitable entropy of &apos;secure&apos; systems.
+            </p>
+            <p className="text-gray-500 font-mono text-sm leading-relaxed">
+              No warranties provided for the curious. Just some write-ups.
+            </p>
+          </div>
+
           <ResearchFilters 
             activeTags={activeTags}
             onToggleTag={toggleTag}
