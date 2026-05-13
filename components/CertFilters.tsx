@@ -1,6 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
 
+const CERT_TAXONOMY = [
+  "Defensive",
+  "Offensive",
+  "AWS",
+  "Cloud",
+  "Azure",
+  "Microsoft",
+] as const;
+
 // Tags derived dynamically from certs data, so no hardcoded taxonomy needed
 interface CertFiltersProps {
   activeTags: string[];
@@ -15,8 +24,6 @@ export default function CertFilters({
   tagCounts,
   onClear,
 }: CertFiltersProps) {
-  const tags = Object.keys(tagCounts);
-
   return (
     <div className="space-y-3 animate-in fade-in duration-700">
       <div className="flex items-center justify-between">
@@ -31,7 +38,7 @@ export default function CertFilters({
         )}
       </div>
       <div className="flex flex-col gap-1.5">
-        {tags.map((tag) => {
+        {CERT_TAXONOMY.map((tag) => {
           const count = tagCounts[tag] || 0;
           const isActive = activeTags.includes(tag);
           return (

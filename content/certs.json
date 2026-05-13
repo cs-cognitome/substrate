@@ -6,7 +6,7 @@
     "date": "2025-06-08",
     "description": "Comprehensive training in defensive security operations, threat detection, incident response, and log analysis in enterprise environments.",
     "badge": "/badges/BlueTeam-lvl-1.png",
-    "tags": ["Blue Team", "Defensive"]
+    "tags": ["Defensive"]
   },
   {
     "id": "aws-clf-c02",
@@ -24,7 +24,7 @@
     "date": "2024-06-17",
     "description": "Vendor-neutral certification validating core security skills across threats, vulnerabilities, cryptography, identity management, and risk mitigation.",
     "badge": "/badges/ComptiaSecurity+.png",
-    "tags": ["General", "Defensive"]
+    "tags": ["Defensive"]
   },
   {
     "id": "az-900",
@@ -36,3 +36,4 @@
     "tags": ["Azure", "Microsoft"]
   }
 ]
+
