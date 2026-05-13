@@ -11,6 +11,7 @@ export interface PostMetadata {
   excerpt: string;
   tags?: string[];
   depth?: 'foundational' | 'emerging' | string;
+  image?: string;
 }
 
 export function getPostMetadata(): PostMetadata[] {
@@ -29,6 +30,7 @@ export function getPostMetadata(): PostMetadata[] {
       slug: fileName.replace('.md', ''),
       tags: matterResult.data.tags || [],
       depth: matterResult.data.depth || 'foundational',
+      image: matterResult.data.image || null,
     };
   });
 
