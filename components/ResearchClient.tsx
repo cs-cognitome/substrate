@@ -9,7 +9,6 @@ import DecipheringText from './DecipheringText';
 
 export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
   const [activeTags, setActiveTags] = useState<string[]>([]);
-  const [activeDepth, setActiveDepth] = useState<'all' | 'foundational' | 'emerging'>('all');
 
   // Compute total counts for each tag globally
   const tagCounts = useMemo(() => {
@@ -28,21 +27,14 @@ export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
   // Filter posts
   const filteredPosts = useMemo(() => {
     return posts.filter(post => {
-      // Check depth
-      if (activeDepth !== 'all' && post.depth !== activeDepth) {
-        return false;
-      }
-      
-      // Check tags (OR logic: if any selected tag is in post.tags)
       if (activeTags.length > 0) {
         const postTags = post.tags || [];
         const matches = activeTags.some(t => postTags.includes(t));
         if (!matches) return false;
       }
-
       return true;
     });
-  }, [posts, activeTags, activeDepth]);
+  }, [posts, activeTags]);
 
   const toggleTag = (tag: string) => {
     setActiveTags(prev => 
@@ -76,9 +68,8 @@ export default function ResearchClient({ posts }: { posts: PostMetadata[] }) {
           <ResearchFilters 
             activeTags={activeTags}
             onToggleTag={toggleTag}
-            activeDepth={activeDepth}
-            setDepth={setActiveDepth}
             tagCounts={tagCounts}
+            onClear={() => setActiveTags([])}
           />
         </div>
 
